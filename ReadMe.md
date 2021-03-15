@@ -88,7 +88,8 @@ cd ..
 catkin build
 ```
 
-# How to run UAV_DRL in Gazebo environment
+# How to run UAV_DRL in Gazebo environment 
+(The following Route is in my PC!!!)
 (talker.py)
 ## 1. run pixhawk connection(MAVROS)
 ```
