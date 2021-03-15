@@ -92,32 +92,32 @@ catkin build
 (talker.py)
 ## 1. run pixhawk connection(MAVROS)
 ```
-source ~/src/mavros_ws/devel/setup.bash
+source ~/DLR-uav-gazebo/mavros_ws/devel/setup.bash
 roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ```
 
 ## 2. run pixhawk&gazebo
 ```
-cd ~/src/Firmware
-make posix_sitl_default gazebo
+cd ~/DLR-uav-gazebo/Firmware
+make px4_sitl_default gazebo
 ```
 
 ## 3. run state_machine: in branch flight_test
 ```
-source ~/src/attitude_controller/devel/setup.bash
+source ~/DLR-uav-gazebo/attitude_controller/devel/setup.bash
 rosrun state_machine offb_simulation_test
 ```
 
 ## 4. switch pixhawk to offboard mode
 ```
-source ~/src/mavros_ws/devel/setup.bash
+source ~/DLR-uav-gazebo/mavros_ws/devel/setup.bash
 rosrun mavros mavsafety arm
 rosrun mavros mavsys mode -c OFFBOARD
 ```
 
 ## 5. run DRL
 ```
-source ~/src/DRL_node_ROS/devel/setup.bash
+source ~/DLR-uav-gazebo/DRL_node_ROS/devel/setup.bash
 rosrun drl_uav talker.py
 ```
 
